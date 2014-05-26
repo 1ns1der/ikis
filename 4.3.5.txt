@@ -1,0 +1,27 @@
+unit unit1;
+interface
+function stepen(chislo: real; step: integer);
+implementation
+function stepen(chislo :real; step: integer): real; 
+var res,c: real; i: integer;
+begin
+c:=1;
+if step<>0 then
+for i:=1 to abs(step) do
+c:=c*chislo;
+if step<0 then c:=1/c;
+if step=0 then c:=1;
+stepen:=c;
+end;
+end.
+
+program x;
+uses unit1;
+writeln('enter the number');
+readln(chislo);
+writeln('enter the stepen');
+readln(step);
+res:=stepen(chislo,step);
+writeln('result is ',res);
+readln;
+end.

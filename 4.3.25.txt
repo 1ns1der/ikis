@@ -1,0 +1,2 @@
+select * from personal group by zarplata asc
+select fio, zarplata from personal group by fio

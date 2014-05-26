@@ -1,0 +1,36 @@
+uses crt;
+type info: record
+surname, name: string;
+ocenka: byte;
+end;
+var s: array [1..10] of info;
+i: integer;
+f1: text;
+out: string;
+begin
+clrscr;
+assign(f1,'f1.txt');
+rewrite(f1);
+for i:=1 to 10 do
+begin
+with s[i] do begin
+writeln('student',i);
+writeln('enter the surname');
+readln(surname);
+writeln('enter the name');
+readln(name);
+writeln('enter the mark');
+readln(ocenka);
+writeln(f1,s[i]);
+readln;
+end;
+close(f1);
+reset(f1);
+while not SeekEof(f1) do
+begin
+if SeekEolnf(f1) then Readln;
+read(f1,out);
+writeln(out);
+end;
+end.
+

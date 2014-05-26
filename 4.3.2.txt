@@ -1,0 +1,45 @@
+uses crt;
+const nmax=20;
+var a:array[1..nmax,1..nmax] of integer;
+    m,n,i,j,k,x:integer;
+begin
+clrscr;
+randomize;
+repeat
+write('Количество строк до ',nmax,' n=');
+readln(n);
+until n in [1..nmax];
+repeat
+write('Количество столбцов до ',nmax,' m=');
+readln(m);
+until m in [1..nmax];
+writeln('Исходная матрица:');
+for i:=1 to n do
+ begin
+  for j:=1 to m do
+   begin
+    a[i,j]:=10+random(41);
+    write(a[i,j]:3);
+   end;
+  writeln;
+ end;
+write('Нажмите Enter для продолжения');
+readln;
+for j:=1 to m do
+for i:=1 to n-1 do
+for k:=i+1 to n do
+if a[i,j]<a[k,j] then
+ begin
+  x:=a[i,j];
+  a[i,j]:=a[k,j];
+  a[k,j]:=x
+ end;
+writeln('Сортировка столбцов по убыванию');
+for i:=1 to n do
+ begin
+  for j:=1 to m do
+  write(a[i,j]:3);
+  writeln
+ end;
+readln
+end.

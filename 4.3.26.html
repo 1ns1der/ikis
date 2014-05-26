@@ -1,0 +1,33 @@
+<html>
+<head></head>
+<body>
+<?php
+$igt = mysql_query("select * from igatable;");
+if($igt)
+{
+  // Определяем таблицу и заголовок
+  echo "<table border=1>";
+  echo "<tr><td>id</td><td>fio</td><td>money</td><td>gender</td><td>birthday</td><</tr>";
+  // Так как запрос возвращает несколько строк, применяем цикл
+  while($arr = mysql_fetch_array($igt))
+  {
+    echo "<tr><td>".$arr['id']."&nbsp;</td><td>".$arr['fio']."&nbsp </td><td>".$arrr['money']."&nbsp;</td><td>".$arr['gender']."&nbsp;</td></tr>".$arr['birthday']."&nbsp;</td></tr>";
+  }
+  echo "</table>";
+}
+else
+{
+  echo "<p><b>Error: ".mysql_error()."</b><p>";
+  exit();
+}
+?>
+<form name="form" action="4.3.26.php" method="post">
+ID <input name="id" type="text"><br>
+FIO <input name="fio" type="text"><br>
+MONEY <input name="money" type="text"><br>
+GENDER <input name="gender"  type="text">
+BIRTHDAY <input name="birthday" type="text"><br>
+<input name="submit" type="submit" value="Добавить запись">
+</form>
+</body>
+</html>

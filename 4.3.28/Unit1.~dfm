@@ -1,0 +1,34 @@
+object Form1: TForm1
+  Left = 409
+  Top = 231
+  Width = 1305
+  Height = 675
+  Caption = '3.4.28'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 16
+    Width = 681
+    Height = 609
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    TitleFont.Style = []
+  end
+  object Database1: TDatabase
+    SessionName = 'Default'
+    Left = 704
+    Top = 16
+  end
+end
